@@ -1,0 +1,17 @@
+# Free preview deployment. SQLite data is temporary on the free plan.
+services:
+  - type: web
+    name: hollow-30-game
+    runtime: node
+    region: frankfurt
+    plan: free
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_PATH
+        value: /tmp/hollow.sqlite
+      - key: HOST
+        value: 0.0.0.0

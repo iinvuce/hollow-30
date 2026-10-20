@@ -1,0 +1,12 @@
+{
+  "name": "HOLLOW//30 — DovyStudio",
+  "short_name": "HOLLOW//30",
+  "description": "Blackwood co-op zombie survival: now with twin-stick mobile controls.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#101711",
+  "theme_color": "#101711",
+  "icons": [{"src":"/favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}]
+}

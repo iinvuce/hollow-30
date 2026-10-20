@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#111613" />
+    <meta
+      name="description"
+      content="HOLLOW//30 by DovyStudio. Thirty minutes. Get out alive. Solo, Duo and Squad zombie survival."
+    />
+    <title>HOLLOW//30 — DovyStudio</title>
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="HOLLOW//30" />
+    <link rel="stylesheet" href="/style.css" />
+    <script type="importmap">
+      { "imports": { "three": "/vendor/three.module.js" } }
+    </script>
+  </head>
+  <body>
+    <svg class="icon-defs" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="6"/><path d="m13 8-3 8m5-8-3 8"/></symbol>
+        <symbol id="i-solo" viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M5 21v-3a7 7 0 0 1 14 0v3M9 17h6"/></symbol>
+        <symbol id="i-squad" viewBox="0 0 24 24"><circle cx="12" cy="6" r="3"/><circle cx="4" cy="10" r="2"/><circle cx="20" cy="10" r="2"/><path d="M7 21v-5a5 5 0 0 1 10 0v5M1 20v-4h4m18 4v-4h-4"/></symbol>
+        <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2"/><path d="M12 1v4m0 14v4M1 12h4m14 0h4"/></symbol>
+        <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2Z"/></symbol>
+        <symbol id="i-bio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M9 2C3 2 2 11 8 12M15 2c6 0 7 9 1 10M4 15c-3 6 6 10 8 4m8-4c3 6-6 10-8 4M8 12c-5-1-6 3-4 5m12-5c5-1 6 3 4 5M9 8c1-4 5-4 6 0"/></symbol>
+        <symbol id="i-skull" viewBox="0 0 24 24"><path d="M6 17c-5-6-2-15 6-15s11 9 6 15v4H6v-4Z"/><circle cx="8" cy="11" r="2"/><circle cx="16" cy="11" r="2"/><path d="m11 16 1-2 1 2M9 18v3m6-3v3"/></symbol>
+        <symbol id="i-flame" viewBox="0 0 24 24"><path d="M13 2c1 7-5 6-3 11 2-1 4-3 4-5 8 8 5 14-2 14S1 15 6 9c0 4 2 5 2 5-1-6 6-7 5-12Z"/></symbol>
+        <symbol id="i-bolt" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-13h-7l0-7Z"/></symbol>
+        <symbol id="i-blade" viewBox="0 0 24 24"><path d="m4 20 4-4m-3-3 6 6M9 15 21 3l-2 7-8 7M3 17l4 4"/></symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24">
+          <path d="M4 12h15m-6-6 6 6-6 6" />
+        </symbol>
+        <symbol id="i-plus" viewBox="0 0 24 24">
+          <path d="M12 5v14M5 12h14" />
+        </symbol>
+        <symbol id="i-sound" viewBox="0 0 24 24">
+          <path d="m11 5-6 5H2v4h3l6 5V5Zm4 3c3 2 3 6 0 8m3-11c5 4 5 10 0 14" />
+        </symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24">
+          <path d="m12 3 8 3v6c0 5-8 9-8 9S4 17 4 12V6l8-3Z" />
+          <path d="m8 12 3 3 5-6" />
+        </symbol>
+        <symbol id="i-cross" viewBox="0 0 24 24">
+          <path d="M5 5l14 14M19 5 5 19" />
+        </symbol>
+        <symbol id="i-box" viewBox="0 0 24 24">
+          <path d="m12 3 9 5v9l-9 5-9-5V8l9-5Zm0 10v9M3 8l9 5 9-5M7 5l10 6" />
+        </symbol>
+        <symbol id="i-users" viewBox="0 0 24 24">
+          <circle cx="9" cy="8" r="3" />
+          <path d="M3 20v-3c0-5 12-5 12 0v3M16 5c5 0 5 7 1 7m1 3c3 0 4 2 4 5" />
+        </symbol>
+        <symbol id="i-lock" viewBox="0 0 24 24">
+          <rect x="5" y="10" width="14" height="11" rx="2" />
+          <path d="M8 10V6a4 4 0 0 1 8 0v4m-4 4v3" />
+        </symbol>
+      </defs>
+    </svg>
+    <div id="loading" class="loading">
+      <div class="loading-studio">
+        Dovy<span>Studio</span><small>P R E S E N T S</small>
+      </div>
+      <div class="loading-title">HOLLOW<span>//30</span></div>
+      <p>THIRTY MINUTES. GET OUT ALIVE.</p>
+      <div class="loading-track"><i id="loading-bar"></i></div>
+      <div class="loading-status">
+        <span id="loading-label">Initializing renderer</span
+        ><span id="loading-number">0%</span>
+      </div>
+      <button id="loading-retry" hidden>Retry connection</button>
+      <p id="loading-help" hidden></p>
+      <a id="loading-open" hidden rel="noopener" target="_blank"
+        >Open game server ↗</a
+      >
+      <details id="loading-details" hidden>
+        <summary>Technical details</summary>
+        <pre id="loading-error"></pre>
+      </details>
+    </div>
+    <div
+      id="scene"
+      aria-label="Animated 3D quarantine outpost and survivor"
+    ></div>
+    <div class="vignette"></div>
+    <div class="grain"></div>
+    <div id="app" class="app">
+      <header class="topbar">
+        <a href="/" class="brand" aria-label="Hollow 30 home"
+          ><span class="brand-emblem">H<span>//</span></span
+          ><span class="brand-text"
+            >HOLLOW<span>//30</span><small>BY DOVYSTUDIO</small></span
+          ></a
+        >
+        <nav aria-label="Game menu" id="tabs">
+          <button class="tab active" data-tab="play">PLAY</button
+          ><button class="tab" data-tab="locker">LOCKER</button
+          ><button class="tab" data-tab="inventory">INVENTORY</button
+          ><button class="tab" data-tab="season">SEASON <b>01</b></button
+          ><button class="tab" data-tab="crates">CRATES</button
+          ><button class="tab" data-tab="settings">SETTINGS</button>
+        </nav>
+        <div class="top-profile">
+          <button id="coins-button" class="wallet-button" aria-label="Coin balance and outfit shop"><svg><use href="#i-coin"/></svg><span id="coin-balance">—</span><small>COINS</small></button>
+          <button id="crates-button" class="wallet-button crate-wallet" aria-label="Supply crates"><svg><use href="#i-box"/></svg><span id="crate-balance">—</span></button>
+          <span class="connection" id="connection"><i></i> CONNECTING</span
+          ><button
+            id="profile-button"
+            class="profile-avatar"
+            aria-label="Edit guest profile"
+          >
+            S
+          </button>
+        </div>
+      </header>
+      <main id="lobby" class="lobby">
+        <section id="play-panel" class="play-panel">
+          <div class="eyebrow">
+            <i></i> SEASON 01 <span>/</span> AFTER THE FALL
+          </div>
+          <h1>THE WORLD<br />WENT QUIET<span>.</span></h1>
+          <p class="hero-sub">Make some noise.</p>
+          <div class="mode-rule"></div>
+          <div class="operation-label">
+            <span class="tiny-cross">✳</span> OPERATION: DEAD SIGNAL
+          </div>
+          <h2>THIRTY MINUTES.<br />GET OUT ALIVE.</h2>
+          <p class="mission-copy">
+            Gear up. Find the keycard. Reach extraction.<br />The dead don’t
+            wait. Neither should you.
+          </p>
+          <div class="mode-tags">
+            <span
+              ><svg><use href="#i-users" /></svg> 2–4 SURVIVORS</span
+            ><span>◷ &nbsp;30 MIN</span><span>CO-OP PVE</span>
+          </div>
+          <button class="map-card" id="map-button">
+            <span class="map-art"><i></i><b>07</b><em>QUARANTINE ZONE</em></span
+            ><span class="map-details"
+              ><small>YOUR DROP ZONE</small><strong>BLACKWOOD</strong
+              ><span>Abandoned. Not empty.</span></span
+            ><span class="map-arrow">↗</span>
+          </button>
+          <div class="build-label">
+            <span class="green-dot"></span> EARLY ACCESS <b>VOL. 001</b> <span class="mobile-ready">/ MOBILE READY</span>
+          </div>
+        </section>
+        <section id="secondary-panel" class="secondary-panel" hidden></section>
+        <section class="character-space" aria-label="Character preview">
+          <div class="character-marker">
+            <span class="diamond">◇</span
+            ><span id="character-name">SURVIVOR</span
+            ><small id="outfit-label">FIELD OPERATIVE</small>
+          </div>
+          <div class="rotate-hint"><span>↔</span> DRAG TO ROTATE</div>
+        </section>
+        <aside class="squad-panel">
+          <div class="mode-caption">CHOOSE YOUR DROP <span>BLACKWOOD / PVE</span></div>
+          <div id="mode-selector" class="mode-selector" aria-label="Game mode">
+            <button data-mode="solo" aria-pressed="true"><svg><use href="#i-solo"/></svg><strong>SOLO</strong><small>1 PLAYER</small></button>
+            <button data-mode="duo" aria-pressed="false"><svg><use href="#i-users"/></svg><strong>DUO</strong><small>2 PLAYERS</small></button>
+            <button data-mode="squad" aria-pressed="false"><svg><use href="#i-squad"/></svg><strong>SQUAD</strong><small>2–4 PLAYERS</small></button>
+          </div>
+          <div class="squad-heading">
+            <span id="party-title">YOUR DEPLOYMENT</span><span id="squad-count">01 <i>/ 01</i></span>
+          </div>
+          <div class="squad-meta">
+            <span id="party-privacy">PRIVATE PARTY</span
+            ><svg><use href="#i-lock" /></svg>
+          </div>
+          <div id="members" class="members"></div>
+          <button id="invite-button" class="invite-button">
+            <svg><use href="#i-plus" /></svg> INVITE A FRIEND <span>↗</span>
+          </button>
+          <div class="squad-note">
+            <span class="green-dot"></span
+            ><span>Better odds. Better company.</span>
+          </div>
+          <div class="deploy-box">
+            <div class="deploy-top">
+              <span id="deploy-mode">SOLO SURVIVAL</span
+              ><span class="green-dot"></span>
+            </div>
+            <p id="ready-status">The only way out is together.</p>
+            <button id="ready-button" class="ready-button">
+              DEPLOY SOLO <svg><use href="#i-arrow" /></svg></button
+            ><button id="start-button" class="start-button" hidden>
+              DEPLOY SQUAD ↗</button
+            ><button id="practice-button" class="practice-button">
+              Just looking around? <u>Solo practice ↗</u>
+            </button>
+          </div>
+        </aside>
+        <section class="intel-strip" aria-label="Field intelligence">
+          <button class="intel-card season-intel" data-open="season">
+            <span class="intel-graphic orbital">◈</span
+            ><span
+              ><small>SEASON 01 / FREE REWARDS</small
+              ><strong>SURVIVE. UNLOCK. REPEAT.</strong
+              ><em>Your next look is earned in the field.</em></span
+            ><b>↗</b>
+          </button>
+          <button class="intel-card locker-intel" data-open="locker">
+            <span class="intel-graphic bio">☣</span
+            ><span
+              ><small>THE LOCKER</small><strong>LOOK ALIVE. STAY ALIVE.</strong
+              ><em>Meet the Toxic Protocol collection.</em></span
+            ><b>↗</b>
+          </button>
+          <button class="intel-card controls-intel" id="controls-button">
+            <span class="intel-graphic key-icon">W</span
+            ><span
+              ><small>FIRST TIME IN BLACKWOOD?</small
+              ><strong>KNOW YOUR WAY OUT.</strong
+              ><em>A quick look at your survival controls.</em></span
+            ><b>↗</b>
+          </button>
+        </section>
+      </main>
+      <footer id="lobby-footer">
+        <span>© DOVYSTUDIO <i>/</i> MADE FOR THE ONES STILL STANDING.</span
+        ><span class="footer-right"
+          ><span id="ping">— MS</span><i>·</i
+          ><button id="audio-button" aria-label="Toggle sound">
+            <svg><use href="#i-sound" /></svg><span>SOUND OFF</span></button
+          ><i>·</i><button id="help-button">HELP <kbd>?</kbd></button></span
+        >
+      </footer>
+    </div>
+    <div id="game-hud" class="game-hud" hidden>
+      <div class="hud-top">
+        <div class="hud-logo">
+          HOLLOW<span>//30</span
+          ><small id="match-mode">BLACKWOOD / CO-OP SURVIVAL</small>
+        </div>
+        <div class="timer-box">
+          <small>EXTRACTION WINDOW</small><strong id="timer">30:00</strong>
+        </div>
+        <button id="game-menu" class="outline-button">ESC / MENU</button>
+      </div>
+      <div id="objective" class="objective">
+        <small>01 / YOUR OBJECTIVE</small
+        ><strong>FIND THE BUNKER KEYCARD</strong>
+        <p>Search the town. Stay together.</p>
+      </div>
+      <div id="team-hud" class="team-hud"></div>
+      <canvas
+        id="minimap"
+        width="180"
+        height="180"
+        aria-label="Map showing squad, loot, and objectives"
+      ></canvas>
+      <div class="hud-bottom">
+        <div class="vitals">
+          <div>
+            <b id="hp-label">100</b><span>HEALTH</span
+            ><span id="armour-label">NO ARMOUR</span>
+          </div>
+          <div class="health-track"><i id="hp-bar"></i></div>
+          <small id="medkit-label">2 MEDKITS <kbd>Q</kbd></small>
+        </div>
+        <div id="interact-prompt" class="interact-prompt" hidden>
+          <kbd>E</kbd> <span>COLLECT</span>
+        </div>
+        <div class="weapon-hud">
+          <small id="weapon-label">P12 SIDEARM</small
+          ><strong
+            ><span id="magazine">12</span><i>/</i
+            ><span id="ammo">90</span></strong
+          ><span id="reload-label">R RELOAD &nbsp; · &nbsp; 1 / 2 SWITCH</span>
+        </div>
+      </div>
+      <div class="game-shortcuts">
+        <span><kbd>WASD</kbd> MOVE</span><span><kbd>SHIFT</kbd> SPRINT</span
+        ><span><kbd>MOUSE</kbd> AIM / FIRE</span
+        ><span><kbd>I</kbd> INVENTORY</span><span><kbd>?</kbd> CONTROLS</span>
+      </div>
+      <div id="touch-controls" class="touch-controls" aria-label="Mobile game controls" hidden>
+        <div id="touch-tip" class="touch-tip" role="status">
+          <span><b>TOUCH CONTROLS</b><small>LEFT TO MOVE · RIGHT TO AIM & FIRE</small></span>
+          <button id="touch-tip-close" aria-label="Dismiss touch tutorial">✕</button>
+        </div>
+        <div id="move-stick" class="touch-stick move-stick" aria-label="Move joystick">
+          <span class="stick-ring"></span><span class="stick-knob"></span>
+          <span class="stick-label">MOVE</span>
+        </div>
+        <div id="aim-stick" class="touch-stick aim-stick" aria-label="Aim and fire joystick">
+          <span class="stick-ring"></span><span class="stick-knob"></span>
+          <span class="stick-reticle">✛</span><span class="stick-label">AIM / FIRE</span>
+        </div>
+        <button id="touch-sprint" class="touch-button sprint-button" aria-label="Hold to sprint"><svg><use href="#i-bolt"/></svg><span>SPRINT</span></button>
+        <div class="touch-actions" aria-label="Action buttons">
+          <button id="touch-interact" class="touch-button interact-button" aria-label="Collect or interact"><svg><use href="#i-plus"/></svg><span>USE</span></button>
+          <button id="touch-reload" class="touch-button" aria-label="Reload weapon"><span class="action-glyph">↻</span><span>RELOAD</span></button>
+          <button id="touch-heal" class="touch-button" aria-label="Use medkit"><span class="action-glyph">✚</span><span>HEAL</span></button>
+          <button id="touch-swap" class="touch-button" aria-label="Switch weapon"><span class="action-glyph">⇄</span><span>SWAP</span></button>
+        </div>
+        <button id="touch-inventory" class="touch-inventory" aria-label="Open inventory">▦ <span>INVENTORY</span></button>
+      </div>
+      <div id="damage-flash"></div>
+    </div>
+    <dialog id="modal">
+      <button class="close-modal" aria-label="Close dialog">
+        <svg><use href="#i-cross" /></svg>
+      </button>
+      <div id="modal-content"></div>
+    </dialog>
+    <div id="toasts" class="toasts" role="status" aria-live="polite"></div>
+    <script type="module" src="/script.js"></script>
+  </body>
+</html>
